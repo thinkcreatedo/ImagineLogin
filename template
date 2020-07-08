@@ -1,0 +1,31 @@
+function wpb_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(/wp-content/uploads/2020/07/itmg_orange.png);
+            background-size: 250px auto;
+            padding-bottom: 10px;
+            width: 300px;
+            height: 208px;
+        }
+        body{
+            background-image: url("https://thinkcreatedo.com/wp-content/uploads/2019/06/home-page-header.jpg")!important;
+        }
+        .login form {
+            background: #ffffffa1!important;
+        }
+        .login #backtoblog a, .login #nav a {
+            color: #fff!important;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'wpb_login_logo' );
+
+function wpb_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'wpb_login_logo_url' );
+ 
+function wpb_login_logo_url_title() {
+    return 'Ultimate Glow Up';
+}
+add_filter( 'login_headertitle', 'wpb_login_logo_url_title' );
